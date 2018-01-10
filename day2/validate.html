@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>html 기본탬플릿 입니다</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<body>
+<div class="container">
+    <form action="" method="post" id="testForm">
+        <table class="table table-bordered">
+            <tr>
+                <th>제목</th>
+                <td><input type="text" name="subject" class="form-control"></td>
+            </tr>
+            <tr>
+                <th>이메일</th>
+                <td><input type="text" name="email" class="form-control"></td>
+            </tr>
+            <tr>
+                <th>지역</th>
+                <td>
+                    <select name="division" id="location" class="form-control">
+                        <option value="">선택하세요</option>
+                        <option value="서울">서울</option>
+                        <option value="수원">수원</option>
+                        <option value="인천">인천</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td>
+                    <textarea name="content" id="contentText" id="" cols="30" rows="10" class="form-control"></textarea>
+                </td>
+            </tr>
+        </table>
+        <button class="btn btn-primary">작성하기</button>
+    </form>
+</div>
+<script
+        src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#testForm').submit(function () {
+            const subject = $('#testForm input[name=subject]');
+            if(!subject.val()) {
+                alert('제목을 입력하세요!');
+                subject.focus();
+                return false;
+            }
+        })
+    });
+</script>
+</body>
+</html>
